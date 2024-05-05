@@ -550,6 +550,15 @@ config ARCH_BOARD_FIRE_STM32
 		and 3 of the boards are supported but only version 2 has been
 		tested.
 
+config ARCH_BOARD_ONEDOTS_STM32F103
+	bool "ONEDOTS STM32F103 board"
+	depends on ARCH_CHIP_STM32F103VE
+	---help---
+		Support for the M3 Wildfire STM32 board.  This board is based on the
+		STM32F103VET6 chip.  See http://firestm32.taobao.com .  Version 2
+		and 3 of the boards are supported but only version 2 has been
+		tested.
+
 config ARCH_BOARD_CHIPKIT_WIFIRE
 	bool "chipKIT Wi-FIRE"
 	depends on ARCH_CHIP_PIC32MZ2048EFG
@@ -3237,6 +3246,7 @@ config ARCH_BOARD
 	default "ez80f910200kitg"           if ARCH_BOARD_EZ80F910200KITG
 	default "ez80f910200zco"            if ARCH_BOARD_EZ80F910200ZCO
 	default "fire-stm32v2"              if ARCH_BOARD_FIRE_STM32
+	default "onedots"                   if ARCH_BOARD_ONEDOTS_STM32F103
 	default "chipkit-wifire"            if ARCH_BOARD_CHIPKIT_WIFIRE
 	default "flipnclick-pic32mz"        if ARCH_BOARD_FLIPNCLICK_PIC32MZ
 	default "flipnclick-sam3x"          if ARCH_BOARD_FLIPNCLICK_SAM3X
@@ -4050,6 +4060,9 @@ source "boards/arm/stm32/emw3162/Kconfig"
 endif
 if ARCH_BOARD_FIRE_STM32
 source "boards/arm/stm32/fire-stm32v2/Kconfig"
+endif
+if ARCH_BOARD_ONEDOTS_STM32F103
+source "boards/arm/stm32/onedots/Kconfig"
 endif
 if ARCH_BOARD_HYMINI_STM32V
 source "boards/arm/stm32/hymini-stm32v/Kconfig"

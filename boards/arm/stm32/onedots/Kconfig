@@ -1,0 +1,23 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+comment "Onedots STM32F103 Configuration"
+
+if ARCH_BOARD_ONEDOTS_STM32F103
+
+choice
+	prompt "Select ONEDOTS STM32 version"
+	default ARCH_BOARD_ONEDOTS
+	---help---
+		This ONEDOTS stm32 board suport
+
+config ARCH_BOARD_ONEDOTS
+	bool "Onedots stm32f103 v0"
+	---help---
+		Selects stm32f103 v0.
+
+
+endchoice
+endif
